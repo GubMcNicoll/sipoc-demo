@@ -14,7 +14,7 @@ This document outlines who the users are and the purposes of various menu option
 
 Introduction
 
-This document is a high-level overview of the different menu options within CargoWise. Its designed to inform you of the industry and types of company or departments that use them.
+This provides a high-level overview of the different menu options within CargoWise. Its designed to inform you of the industry and types of company or departments that use them.
 
 CargoWise is an integrated platform designed to support single or multiple companies by utilizing a single shared database. 
 
