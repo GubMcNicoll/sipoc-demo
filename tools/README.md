@@ -3,11 +3,11 @@
 This folder contains a small Python agent to classify work item summaries (`WKI_Summary`) using the repository's product classification rules.
 
 Files
-- `product_agent.py` — reads `SourceDocuments/WIData-lastyr.csv` and `SourceDocuments/productalias.md`, applies the rules from `classifyingproducts.md`, and writes `tools/output_classified.csv`.
+- `product_agent.py` — reads `SourceDocuments/WIData-lastyr.csv` and `SourceDocuments/productalias.md`, applies the rules from `classifyingproducts.md`, and writes `output/output_classified.csv` by default.
 
 Quick run (PowerShell on Windows)
 
-Run with the bundled defaults (reads `SourceDocuments/WIData-lastyr.csv` and writes `tools/output_classified.csv`):
+Run with the bundled defaults (reads `SourceDocuments/WIData-lastyr.csv` and writes `output/output_classified.csv`):
 
 ```powershell
 python .\tools\product_agent.py
@@ -16,7 +16,7 @@ python .\tools\product_agent.py
 Or specify paths explicitly:
 
 ```powershell
-python .\tools\product_agent.py -i .\SourceDocuments\WIData-lastyr.csv -a .\SourceDocuments\productalias.md -o .\tools\output_classified.csv
+python .\tools\product_agent.py -i .\SourceDocuments\WIData-lastyr.csv -a .\SourceDocuments\productalias.md -o .\output\output_classified.csv
 ```
 
 Notes

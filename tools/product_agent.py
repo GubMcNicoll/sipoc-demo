@@ -102,6 +102,8 @@ def classify_summary(summary: str, aliases: dict):
 
 def process(input_csv: Path, alias_md: Path, output_csv: Path):
     aliases = load_aliases(alias_md)
+    # ensure output directory exists
+    output_csv.parent.mkdir(parents=True, exist_ok=True)
     with input_csv.open(newline='', encoding='utf-8') as inf, output_csv.open('w', newline='', encoding='utf-8') as outf:
         reader = csv.DictReader(inf)
         fieldnames = reader.fieldnames[:] if reader.fieldnames else []
@@ -140,8 +142,8 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument('--input', '-i', default='SourceDocuments/WIData-lastyr.csv')
     p.add_argument('--aliases', '-a', default='SourceDocuments/productalias.md')
-    p.add_argument('--output', '-o', default='tools/output_classified.csv')
-    p.add_argument('--md', dest='md', default='tools/features_products.md',
+    p.add_argument('--output', '-o', default='output/output_classified.csv')
+    p.add_argument('--md', dest='md', default='output/features_products.md',
                    help='Write markdown list of products/features to this path')
     args = p.parse_args()
     md_tree = process(Path(args.input), Path(args.aliases), Path(args.output))
